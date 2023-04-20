@@ -7,6 +7,7 @@ fileInput.addEventListener("input", (event) => {
   event.preventDefault();
 
   const file = event.target.files[0];
+  if(file.name === undefined) return;
   if (file.name.slice(-4,file.name.length) !== ".jpg") {
     console.dir(file.name)
     errorMessage.classList.add("active");
