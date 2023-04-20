@@ -153,6 +153,22 @@ button,a{
     border-radius: 8px;
     box-sizing: border-box;
 }
+
+.hero__content-upload-error {
+    opacity: 0;
+    font-size: 17px;
+    color: red;
+    transition: 250ms linear opacity;
+}
+
+.hero__content-upload-error.active {
+    opacity: 1;
+}
+
+.hero__content-upload-download {
+    opacity: 0;
+}
+
 .hero__content-upload-input {
     position: absolute;
     top: 0;
