@@ -1,9 +1,12 @@
 const apiKey = "ihXw8pVhYVvaY2DFyNUAEgum";
-const fileInput = document.querySelector(".hero__content-upload-input");
+const fileInput1 = document.querySelector("#upload-file-1");
+const fileInput2 = document.querySelector("#upload-file-2");
 const downloadLink = document.querySelector(".hero__content-upload-download");
 const errorMessage = document.querySelector(".hero__content-upload-error");
 
-fileInput.addEventListener("change", (event) => {
+
+
+const removeBackground = (event) => {
   event.preventDefault();
   if(event.target.files.length === 0) return
   
@@ -14,7 +17,7 @@ fileInput.addEventListener("change", (event) => {
     errorMessage.classList.add("active");
     setTimeout(() => {
         errorMessage.classList.remove('active')
-    }, 5000);
+    }, 10000);
     return;
   }
 
@@ -45,4 +48,12 @@ fileInput.addEventListener("change", (event) => {
   });
 
   reader.readAsDataURL(file);
-});
+}
+
+
+
+
+fileInput1.addEventListener("change", removeBackground);
+fileInput2.addEventListener("change", removeBackground);
+
+
