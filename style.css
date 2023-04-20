@@ -51,6 +51,20 @@ button,a{
     padding: 20px 0;
 }
 
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header__logo-title {
+    font-family: 'Roboto';
+    font-size: 30px;
+    font-weight: 500;
+    color: #787D92;
+    text-transform: uppercase;
+}
+
 .header__navigation {
     display: flex;
     align-items: center;
