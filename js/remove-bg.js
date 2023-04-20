@@ -3,11 +3,12 @@ const fileInput = document.querySelector(".hero__content-upload-input");
 const downloadLink = document.querySelector(".hero__content-upload-download");
 const errorMessage = document.querySelector(".hero__content-upload-error");
 
-fileInput.addEventListener("input", (event) => {
+fileInput.addEventListener("change", (event) => {
   event.preventDefault();
-
+  if(event.target.files.length === 0) return
+  
   const file = event.target.files[0];
-  if(file.name === undefined) return;
+  if(file.hasOwnProperty('name') ) return;
   if (file.name.slice(-4,file.name.length) !== ".jpg") {
     console.dir(file.name)
     errorMessage.classList.add("active");
