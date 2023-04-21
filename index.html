@@ -27,7 +27,7 @@
               <input
                 class="hero__content-upload-input"
                 type="file"
-                id="upload-file-4"
+                id="upload-file-1"
               />
             </button>
           </nav>
@@ -84,7 +84,7 @@
                 <input
                   class="hero__content-upload-input"
                   type="file"
-                  id="upload-file-1"
+                  id="upload-file-2"
                 />
                 <img
                   class="hero__content-upload-icon"
@@ -115,8 +115,11 @@
 
                 <button class="hero__content-upload-accept-again">
                   <input
-                  type="file"class="hero__content-upload-accept-again-input"
-                  /id="upload-file-accept"> Load other
+                    type="file"
+                    class="hero__content-upload-accept-again-input"
+                    id="upload-file-accept"
+                  />
+                  Upload Another
                 </button>
               </div>
             </div>
@@ -332,25 +335,71 @@
               </ul>
 
               <div class="hero__content-upload">
-                <input
-                  class="hero__content-upload-input"
-                  type="file"
-                  id="upload-file-2"
-                />
-                <img
-                  class="hero__content-upload-icon"
-                  src="./assets/download.svg"
-                />
-                <button class="hero__content-upload-button">
-                  Upload one or multiple images
+                <div
+                  class="hero__content-upload-block"
+                  id="hero__content-upload-block"
+                >
                   <input
                     class="hero__content-upload-input"
                     type="file"
-                    id="upload-file-5"
+                    id="upload-file-4"
                   />
-                </button>
-                <p class="hero__content-text">or drag & drop here</p>
+                  <img
+                    class="hero__content-upload-icon"
+                    src="./assets/download.svg"
+                  />
+                  <button class="hero__content-upload-button">
+                    Upload one or multiple images
+                    <input
+                      class="hero__content-upload-input"
+                      type="file"
+                      id="upload-file-5"
+                    />
+                  </button>
+                  <p class="hero__content-text">or drag & drop here</p>
+                </div>
+
+                <div
+                  class="hero__content-upload-loader"
+                  id="hero__content-upload-loader"
+                >
+                  <p class="hero__content-upload-loader-title">
+                    Loading in progress
+                  </p>
+                  <div class="hero__content-upload-loader-line"></div>
+                </div>
+
+                <div
+                  class="hero__content-upload-accept"
+                  id="hero__content-upload-accept"
+                >
+                  <p class="hero__content-upload-accept-title">Image done</p>
+                  <p
+                    class="hero__content-upload-accept-second"
+                    id="hero__content-upload-accept-second"
+                  ></p>
+                  <a
+                    class="hero__content-upload-download"
+                    id="hero__content-upload-download"
+                    >Download Image</a
+                  >
+
+                  <button class="hero__content-upload-accept-again">
+                    <input
+                      type="file"
+                      class="hero__content-upload-accept-again-input"
+                      id="upload-file-accept2"
+                    />
+                    Upload Another
+                  </button>
+                </div>
               </div>
+              <p
+                class="hero__content-upload-error"
+                id="hero__content-upload-error"
+              >
+                Only files with .jpg extension
+              </p>
             </div>
           </div>
         </div>
