@@ -57,7 +57,7 @@ const removeBackground = (event) => {
         loader.classList.remove("active");
         document.querySelector(
           ".hero__content-upload-accept-second"
-        ).textContent = `${file.name}`;
+        ).textContent = `${file.name.slice(0, -4)}_no_BG.png`;
         acceptUpload.classList.add("active");
 
         const url = URL.createObjectURL(result);
