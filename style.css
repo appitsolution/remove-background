@@ -109,6 +109,9 @@ button,a{
 .header__navigation-upload .hero__content-upload-input {
     cursor: pointer;
 }
+.header__navigation-upload .hero__content-upload-input::file-selector-button:hover {
+    cursor: pointer;
+  }
 
 .header__navigation-upload:hover {
     opacity: 0.8;
