@@ -88,6 +88,7 @@ button,a{
 }
 
 .header__navigation-upload {
+    position: relative;
     font-family: 'Roboto';
     font-size: 15px;
     font-weight: 700;
