@@ -196,14 +196,11 @@ button,a{
 }
 
 .hero__content-upload-button {
-    width: auto;
-    max-width: none;
-    padding: 9px 50px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 420px;
     background: linear-gradient(90deg,#8860d0,#5580e9);
     border-radius: 8px;
     cursor: pointer;
@@ -214,6 +211,15 @@ button,a{
     color: #fff;
     border: none;
     max-width: 420px;
+    z-index: 2;
+}
+
+.hero__content-upload-button:hover {
+    opacity: 0.8;
+}
+
+.hero__content-upload-button .hero__content-upload-input {
+    cursor: pointer;
 }
 
 .hero__content-text {
