@@ -1,0 +1,131 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+        .loader-body {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(61 4 95);
+            transition: all 250ms linear;
+
+        }
+        .loader-body.active {
+            opacity: 1;
+            /* pointer-events: all; */
+        }
+
+
+
+        .loader-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background: rgba(6, 4, 4, 0.9); */
+            perspective: 500px;
+        }
+
+        .loader-wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateX(0deg);
+            transition: transform 250ms linear;
+        }
+
+        .loader-wrap h2 {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -50%);
+            margin: 0;
+            font-size: 30px;
+            font-weight: 700;
+            font-family: "Roboto";
+        }
+
+        .loader-wrap .loader-result {
+            opacity: 0;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateX(180deg);
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: "Roboto";
+            transition: all 250ms linear;
+            user-select: none;
+            animation: test1 2000ms infinite;
+        }
+
+        .loader-wrap.active {
+            transform: translate(-50%, -50%) rotateX(180deg);
+        }
+
+        .loader-wrap.active .loader-result {
+            opacity: 1;
+        }
+
+        .loader-wrap.active h2 {
+            opacity: 0;
+        }
+
+        .loader-current {
+            width: 90px;
+            height: 90px;
+            border-right: 8px solid rgb(234, 244, 96);
+            border-left: 8px solid rgb(238 0 255);
+            border-top: 8px solid rgb(85, 224, 243);
+            border-bottom: 8px solid rgb(247, 154, 48);
+
+            border-radius: 1000px;
+
+            animation: test2 5000ms infinite;
+            /* animation-direction: normal; */
+            animation-delay: 0;
+            /* animation-delay: 250ms; */
+            filter: drop-shadow(1px 1px 5px rgba(208, 173, 173, 0.845));
+            transition: border 250ms linear;
+        }
+
+        .loader-current.active {
+            animation: none;
+            border: 8px solid rgb(83 237 7)
+        }
+
+
+        @keyframes test1 {
+            0% {
+                transform: translate(-50%, -50%) rotateX(180deg) scale(1);
+            }
+
+            25% {
+                transform: translate(-50%, -50%) rotateX(180deg) scale(1.1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) rotateX(180deg) scale(1);
+            }
+        }
+
+
+        @keyframes test2 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
