@@ -4,6 +4,7 @@ const fileInput2 = document.querySelector("#upload-file-2");
 const fileInput3 = document.querySelector("#upload-file-3");
 const fileInput4 = document.querySelector("#upload-file-4");
 const fileInput5 = document.querySelector("#upload-file-5");
+const fileInput6 = document.querySelector("#upload-file-accept");
 const downloadLink = document.querySelector(".hero__content-upload-download");
 const errorMessage = document.querySelector(".hero__content-upload-error");
 
@@ -15,6 +16,14 @@ const uploadBlock = document.querySelector(".hero__content-upload-block");
 
 const removeBackground = (event) => {
   event.preventDefault();
+
+  if (uploadBlock.classList.contains("active")) {
+    uploadBlock.classList.remove("active");
+  }
+  if (acceptUpload.classList.contains("active")) {
+    acceptUpload.classList.remove("active");
+  }
+
   if (event.target.files.length === 0) return;
 
   const file = event.target.files[0];
@@ -54,7 +63,7 @@ const removeBackground = (event) => {
         const url = URL.createObjectURL(result);
 
         downloadLink.href = url;
-        downloadLink.download = "result.png";
+        downloadLink.download = `${file.name.slice(0, -4)}_no_BG.png`;
       })
       .catch((error) => console.error(error));
   });
@@ -67,3 +76,4 @@ fileInput2.addEventListener("change", removeBackground);
 fileInput3.addEventListener("change", removeBackground);
 fileInput4.addEventListener("change", removeBackground);
 fileInput5.addEventListener("change", removeBackground);
+fileInput6.addEventListener("change", removeBackground);
