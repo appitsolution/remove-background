@@ -7,6 +7,12 @@ const fileInput5 = document.querySelector("#upload-file-5");
 const downloadLink = document.querySelector(".hero__content-upload-download");
 const errorMessage = document.querySelector(".hero__content-upload-error");
 
+const loader = document.querySelector(".hero__content-upload-loader");
+
+const acceptUpload = document.querySelector(".hero__content-upload-accept");
+
+const uploadBlock = document.querySelector(".hero__content-upload-block");
+
 const removeBackground = (event) => {
   event.preventDefault();
   if (event.target.files.length === 0) return;
@@ -14,7 +20,6 @@ const removeBackground = (event) => {
   const file = event.target.files[0];
   if (file.hasOwnProperty("name")) return;
   if (file.name.slice(-4, file.name.length) !== ".jpg") {
-    console.dir(file.name);
     errorMessage.classList.add("active");
     setTimeout(() => {
       errorMessage.classList.remove("active");
@@ -23,6 +28,8 @@ const removeBackground = (event) => {
   }
 
   const reader = new FileReader();
+  uploadBlock.classList.add("active");
+  loader.classList.add("active");
 
   reader.addEventListener("load", () => {
     const formData = new FormData();
@@ -38,12 +45,16 @@ const removeBackground = (event) => {
     })
       .then((response) => response.blob())
       .then((result) => {
+        loader.classList.remove("active");
+        document.querySelector(
+          ".hero__content-upload-accept-second"
+        ).textContent = `${file.name}`;
+        acceptUpload.classList.add("active");
+
         const url = URL.createObjectURL(result);
 
         downloadLink.href = url;
         downloadLink.download = "result.png";
-        downloadLink.style.display = "block";
-        downloadLink.click();
       })
       .catch((error) => console.error(error));
   });

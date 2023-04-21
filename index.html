@@ -80,29 +80,43 @@
             <p class="hero__content-desc">Quickly, Easily, Online</p>
 
             <div class="hero__content-upload">
-              <input
-                class="hero__content-upload-input"
-                type="file"
-                id="upload-file-1"
-              />
-              <img
-                class="hero__content-upload-icon"
-                src="./assets/download.svg"
-              />
-              <button class="hero__content-upload-button">
-                Upload one or multiple images
+              <div class="hero__content-upload-block">
                 <input
                   class="hero__content-upload-input"
                   type="file"
-                  id="upload-file-3"
+                  id="upload-file-1"
                 />
-              </button>
-              <p class="hero__content-text">or drag & drop here</p>
+                <img
+                  class="hero__content-upload-icon"
+                  src="./assets/download.svg"
+                />
+                <button class="hero__content-upload-button">
+                  Upload one or multiple images
+                  <input
+                    class="hero__content-upload-input"
+                    type="file"
+                    id="upload-file-3"
+                  />
+                </button>
+                <p class="hero__content-text">or drag & drop here</p>
+              </div>
+
+              <div class="hero__content-upload-loader">
+                <p class="hero__content-upload-loader-title">
+                  Loading in progress
+                </p>
+                <div class="hero__content-upload-loader-line"></div>
+              </div>
+
+              <div class="hero__content-upload-accept">
+                <p class="hero__content-upload-accept-title">Image done</p>
+                <p class="hero__content-upload-accept-second"></p>
+                <a class="hero__content-upload-download">Download Image</a>
+              </div>
             </div>
             <p class="hero__content-upload-error">
               Only files with .jpg extension
             </p>
-            <a class="hero__content-upload-download"></a>
           </div>
         </div>
       </div>
@@ -326,7 +340,7 @@
                   <input
                     class="hero__content-upload-input"
                     type="file"
-                    id="upload-file-4"
+                    id="upload-file-5"
                   />
                 </button>
                 <p class="hero__content-text">or drag & drop here</p>
